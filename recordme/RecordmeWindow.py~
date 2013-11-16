@@ -1,0 +1,54 @@
+# -*- Mode: Python; coding: utf-8; indent-tabs-mode: nil; tab-width: 4 -*-
+### BEGIN LICENSE
+# This file is in the public domain
+### END LICENSE
+
+from locale import gettext as _
+
+from gi.repository import Gtk, GObject # pylint: disable=E0611
+
+import logging
+logger = logging.getLogger('recordme')
+
+from recordme_lib import Window
+from recordme.AboutRecordmeDialog import AboutRecordmeDialog
+from recordme.PreferencesRecordmeDialog import PreferencesRecordmeDialog
+from threading import Thread
+
+GObject.threads_init()
+# See recordme_lib.Window.py for more details about how this class works
+class RecordmeWindow(Window):
+    __gtype_name__ = "RecordmeWindow"
+    record = False
+    
+    def finish_initializing(self, builder): # pylint: disable=E1002
+        """Set up the main window"""
+        super(RecordmeWindow, self).finish_initializing(builder)
+
+        self.AboutDialog = AboutRecordmeDialog
+        self.PreferencesDialog = PreferencesRecordmeDialog
+
+        # Code for other initialization actions should be added here.
+        self.button1 = self.builder.get_object('button1')
+        self.button2 = self.builder.get_object('button2')
+
+    def on_button1_clicked(self, widget):
+        print "button1 clicked!"
+        handler_id = widget.connect("clicked", self.recording,"1")
+            
+
+
+
+    def on_button2_clicked(self, widget):
+        self.record = True
+        print 'stop triggered!!'
+
+
+    def recording(self):
+        print "recording..."
+        while self.recording:
+            print "."
+    
+
+
+

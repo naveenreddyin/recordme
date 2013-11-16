@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=Recordme
+_Comment=Recordme application
+Categories=GNOME;Utility;
+Exec=recordme
+Icon=recordme
+Terminal=false
+Type=Application

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <!-- interface-requires recordme_window 1.0 -->
+  <!-- interface-local-resource-path ../media -->
+  <object class="RecordmeWindow" id="recordme_window">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Recordme</property>
+    <property name="window_position">center</property>
+    <property name="icon">../media/recordme.svg</property>
+    <child>
+      <object class="GtkLayout" id="layout1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkButton" id="button1">
+            <property name="label" translatable="yes">record</property>
+            <property name="width_request">89</property>
+            <property name="height_request">27</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">17</property>
+            <property name="y">87</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="button2">
+            <property name="label" translatable="yes">stop</property>
+            <property name="width_request">89</property>
+            <property name="height_request">27</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="x">16</property>
+            <property name="y">138</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
